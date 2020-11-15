@@ -1,5 +1,5 @@
 ## 폴더구조
-
+```
 ├── src
 │   ├── App.js
 │   ├── App.scss
@@ -35,9 +35,9 @@
 │   │   │   ├── Loading.js
 │   │   │   └── index.js
 │   │   └── nav
-│   │   ├── GlobalNav.js
-│   │   ├── GlobalNav.scss
-│   │   └── index.js
+│   │       ├── GlobalNav.js
+│   │       ├── GlobalNav.scss
+│   │       └── index.js
 │   ├── font
 │   │   ├── Pano\ Trial\ Bold.otf
 │   │   ├── Pano\ Trial\ Light.otf
@@ -45,9 +45,10 @@
 │   ├── index.css
 │   ├── index.js
 │   └── pages
-│   ├── main
-│   │   ├── Main.js
-│   │   └── Main.scss
-│   └── member
-│   ├── Member.js
-│   └── Member.scss
+│       ├── main
+│       │   ├── Main.js
+│       │   └── Main.scss
+│       └── member
+│           ├── Member.js
+│           └── Member.scss
+```
