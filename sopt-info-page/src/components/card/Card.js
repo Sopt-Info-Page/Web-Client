@@ -162,7 +162,7 @@ const Card = ({ memberData }) => {
         console.log(isHover);
     };
 
-    const onHandleMouseOut = () => {
+    const onHandleMouseLeave = () => {
         setIsHover(false);
         console.log(isHover);
     };
@@ -171,7 +171,7 @@ const Card = ({ memberData }) => {
         <>
             <CardWrap>
                 <CardImg onMouseOver={onHandleMouseOver}/>
-                <CardImgHover onMouseOut = {onHandleMouseOut} isHover={isHover}>
+                <CardImgHover onMouseLeave = {onHandleMouseLeave} isHover={isHover}>
                     <CardImgBubble>
                         <CardSmallImg />
                         <CardSpeechBubble>Hi, I'm {str1}!</CardSpeechBubble>
