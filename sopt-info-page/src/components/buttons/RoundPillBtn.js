@@ -1,7 +1,11 @@
 import './RoundPillBtn.scss';
 
-function RoundPillBtn() {
-  return <div></div>;
+function RoundPillBtn({text}) {
+  return (
+    <>
+      <div className="roundPill">{text}</div>
+    </>
+  );
 }
 
 export default RoundPillBtn;
