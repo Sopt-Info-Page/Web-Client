@@ -21,7 +21,11 @@ const Marq = styled.div`
 const MarqUl = styled.ul`
     list-style:none;
     height:100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    @media (max-width: 1024px){
+        
+    }   
     animation: ${scrolling} 12s linear infinite;
 `;
 
