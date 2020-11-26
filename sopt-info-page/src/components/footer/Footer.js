@@ -35,6 +35,7 @@ const Logo = styled.img.attrs({
 `;
 
 const CopyRight = styled.span`
+    font-size:10px;
 `;
 
 const Footer = (props) => (
