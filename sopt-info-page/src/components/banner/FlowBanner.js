@@ -39,7 +39,7 @@ const MarqLi = styled.li`
     color: ${(props)=>props.flowstate ? '#8DFF65':'#FFFFFF'};
     font-size: 30px;
     @media (max-width: 1024px){
-        
+        font-size: 15px;
     }   
     
     font-weight: 400;

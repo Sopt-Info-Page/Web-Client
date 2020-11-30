@@ -12,16 +12,24 @@ import img_top4 from './img_top4.png';
 import img_top5 from './img_top5.png';
 import img_top6 from './img_top6.png';
 import img_top7 from './img_top7.png';
+import emoji1 from './emoji1.png';
+import emoji2 from './emoji2.png';
+import emoji3 from './emoji3.png';
+import leftCloud from './left-cloud.png';
+import rightCloud from './right-cloud.png';
 import down from './down.png';
+import blackdown from './blackdown.png';
 import eyes from './eyes.png';
+
 
 const NavWrap = styled.div`
     width: 100%;
     background-color: #8DFF65;  
 `;
 
+// Start Design Part
+
 const DesignPart = styled.div`
-    /* border: 1px solid red; */
     width:100%;
     height: 540px;
     display:flex;
@@ -65,6 +73,10 @@ const DesignPartTitle = styled.span`
     letter-spacing: 2px;
 `
 
+// End Design Part
+
+// Start About & Join Part
+
 const DownArrow = styled.img.attrs(props => ({
     src: down,
 }))
@@ -100,7 +112,6 @@ const JoinPart = styled.div`
 `;
 
 const JoinBox = styled.div`
-    /* border: 1px solid red; */
     padding-top: 50px;
     width:100%;
     height: 680px;
@@ -142,14 +153,6 @@ const JoinUsText = styled.span`
     letter-spacing: 3px;
 `;
 
-
-// We are, Part 임시 구분 용
-const Temp = styled.div`     
-    width: 100%;
-    height: 400px;
-    background-color: #fff;
-`;
-
 const EyesImg = styled.img.attrs({
     src : eyes
 })
@@ -160,7 +163,102 @@ const EyesImg = styled.img.attrs({
 
 `;
 
+// End About & Join Part
 
+
+// Start We are Part 
+
+const WeArePart = styled.div`     
+    width: 100%;
+    height: 800px;
+    background-color: #FFFFFF;
+`;
+
+// End We are Part
+
+// Start More Part
+
+const MorePart = styled.div`
+    width:100%;
+    height: auto;
+    background-color: #FFFFFF;
+    padding-top:80px;
+`;
+
+
+const MoreBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+`;
+
+const DownArrowBlack = styled.img.attrs(props => ({
+    src: blackdown,
+}))
+`   
+    display:block;
+    width: 60px;
+`
+
+const MoreContentWrapper = styled.div`
+    width: 95%;
+    margin: 0 auto;
+    height: auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #FFFFFF;
+`;
+
+const MoreContent = styled.div`
+    width:100%;
+    height: 220px;
+    display: flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:space-between;
+    position: relative;
+    
+`;
+
+const MoreContentItem = styled.span`
+    display: block;
+    font-size: 30px;
+    text-align: left;
+`;
+
+
+const MoreContentEmoji = styled.img.attrs(props => ({
+    src: props.emoji,
+}))`
+    display:block;
+`;
+
+const MoreContentCloudImg = styled.img.attrs(props=>({
+    src: props.cloud,
+}))`
+    display:block;
+    width:160px;
+    position:absolute;
+    bottom:0;
+    ${props =>
+        props.evenCloud &&
+        css`
+            right:90px;
+        `    
+    }
+`;
+
+// End More Part
+
+
+// Start Var
+
+const MoreMsg1 = `Sopkathon #virtual hackathon Untact Covid 19 Hackathon`;
+const MoreMsg2 = `A:live Sopt 16th hackthon app-jam App Jam's Final Presentation`;
+const MoreMsg3 = `KB DNA Digital Native Alliance`;
+
+// End Var
 
 const GlobalNav = (props) => {
     return(
@@ -168,9 +266,17 @@ const GlobalNav = (props) => {
             <Header />
             <NavWrap>
                 <DesignPart>
-                
                     <DesignPartTitleBox>
-                        <OvalBtn className="yearOval" border_color={'#FFFFFF'} border_width={1} background={'#FFFFFF'} color={'#000'} height={50} width={120} font_size={15} text={'2020'}></OvalBtn>
+                        <OvalBtn className="yearOval" 
+                                 border_color={'#FFFFFF'} 
+                                 border_width={1} 
+                                 background={'#FFFFFF'} 
+                                 color={'#000'} 
+                                 height={50} 
+                                 width={120} 
+                                 font_size={15} 
+                                 text={'2020'}
+                                 ></OvalBtn>
                         <CloudImg img={img_top1} top={63} bottom={0} left={0} right={0} size={68}/>
                         <CloudImg img={img_top2} top={23} bottom={0} left={15} right={0} size={30}/>
                         <CloudImg img={img_top3} top={75} bottom={9} left={15} right={0} size={28}/>
@@ -186,7 +292,15 @@ const GlobalNav = (props) => {
                 <JoinPart>
                     <JoinBox>
                         <AboutBox>
-                            <OvalBtn className="yearOval" border_color={'#FFFFFF'} border_width={1} background={'#8DFF65'} color={'#FFFFFF'} height={50} width={120} font_size={15} text={'about'}></OvalBtn>
+                            <OvalBtn className="aboutOval" 
+                                     border_color={'#FFFFFF'} 
+                                     border_width={1} 
+                                     background={'#8DFF65'} 
+                                     color={'#FFFFFF'} 
+                                     height={50} 
+                                     width={120} 
+                                     font_size={15} 
+                                     text={'about'}></OvalBtn>
                             <DownArrow />
                         </AboutBox>
                         <JoinPartDescBox>
@@ -206,9 +320,83 @@ const GlobalNav = (props) => {
                     </JoinBox>
                     <RoundPillBtn className="roundPill" text={'so who are you?'}/>
                 </JoinPart>
-                <Temp>-- WE ARE PART --</Temp>
+
+                <WeArePart>
+                    
+                </WeArePart>
                 <FlowBanner secondflow/>
-                <Temp>-- MORE PART --</Temp>
+                
+                <MorePart>
+                    <MoreBox>
+                        <OvalBtn className="moreOval" 
+                                border_color={'#000'} 
+                                border_width={1}
+                                background={'#FFFFFF'} 
+                                color={'#000'} 
+                                height={50} 
+                                width={120} 
+                                font_size={15} 
+                                text={'more'}></OvalBtn>
+                        <DownArrowBlack />
+                    </MoreBox>
+                    <MoreContentWrapper>
+
+                        <MoreContent>
+                            <OvalBtn className="moreOval" 
+                                    border_color={'#000'} 
+                                    border_width={1}
+                                    background={'#000'} 
+                                    color={'#FFFFFF'} 
+                                    height={40} 
+                                    width={80} 
+                                    font_size={15} 
+                                    text={'01'}></OvalBtn>
+                                <MoreContentItem>{MoreMsg1}</MoreContentItem>
+                                <MoreContentEmoji emoji={emoji1}/>
+                        </MoreContent>
+                        <MoreContent>
+                            <MoreContentCloudImg cloud={rightCloud}/>
+                        </MoreContent>
+
+
+                        <MoreContent>
+                            <MoreContentCloudImg evenCloud cloud={leftCloud}/>
+                        </MoreContent>
+                        <MoreContent>
+                            <OvalBtn className="moreOval" 
+                                    border_color={'#000'} 
+                                    border_width={1}
+                                    background={'#000'} 
+                                    color={'#FFFFFF'} 
+                                    height={40} 
+                                    width={80} 
+                                    font_size={15} 
+                                    text={'02'}></OvalBtn>
+                            <MoreContentItem>{MoreMsg2}</MoreContentItem>
+                            <MoreContentEmoji emoji={emoji2}/> 
+                        </MoreContent>
+
+
+                        <MoreContent>
+                            <OvalBtn className="moreOval" 
+                                    border_color={'#000'} 
+                                    border_width={1}
+                                    background={'#000'} 
+                                    color={'#FFFFFF'} 
+                                    height={40} 
+                                    width={80} 
+                                    font_size={15} 
+                                    text={'03'}></OvalBtn>
+                            <MoreContentItem>{MoreMsg3}</MoreContentItem>
+                            <MoreContentEmoji emoji={emoji3}/>
+                        </MoreContent>
+                        <MoreContent>
+                            <MoreContentCloudImg cloud={rightCloud}/>
+                        </MoreContent>
+
+
+                    </MoreContentWrapper>
+                </MorePart>
             </NavWrap>
         </>
     );

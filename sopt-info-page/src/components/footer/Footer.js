@@ -5,6 +5,7 @@ import OvalBtn from "../buttons/OvalBtn";
 import img_sopt_logo from './img_sopt_logo.png';
 
 const FooterWrapper = styled.div`
+    
     margin-top: 200px;
     width: 100%;
     height: 439px;

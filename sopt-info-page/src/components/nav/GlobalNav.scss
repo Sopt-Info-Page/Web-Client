@@ -3,7 +3,36 @@
     font-size: 20px;
 }
 
+.moreOval{
+    font-size: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    &:hover{
+        background-color: #000;
+        border: 1px solid #FFFFFF;
+        color: #FFFFFF;
+        transition: all .3s ease;
+    }
+}
+
+.aboutOval{
+    font-size: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    &:hover{
+        background-color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+        color: #8DFF65;
+        transition: all .3s ease;
+    }
+}
+
 .roundPill {
     position: absolute;
-    bottom:-84px;
+    bottom:-81px;
+    &:hover{
+        background-color: #000;
+        color: #FFFFFF;
+        transition: all .3s ease;
+    }
 }
