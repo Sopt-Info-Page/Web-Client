@@ -1,7 +1,9 @@
 import React from 'react';
+import './GlobalNav.scss';
 import styled, {createGlobalStyle, keyframes, css} from "styled-components";
 import Header from "../header/Header";
 import FlowBanner from "../banner/FlowBanner";
+import OvalBtn from "../buttons/OvalBtn";
 import img_top1 from './img_top1.png';
 import img_top2 from './img_top2.png';
 import img_top3 from './img_top3.png';
@@ -17,6 +19,7 @@ const NavWrap = styled.div`
 `;
 
 const DesignPart = styled.div`
+    /* border: 1px solid red; */
     width:100%;
     height: 540px;
     display:flex;
@@ -26,10 +29,12 @@ const DesignPart = styled.div`
 `
 
 const DesignPartTitleBox = styled.div`
+    /* border: 1px solid red; */
     width: 700px;
     height: 350px;
     position:relative;
     display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
 `;
@@ -55,7 +60,7 @@ const DesignPartTitle = styled.span`
     font-size:60px;
     font-weight:700;
     line-height: 72px;
-    margin-bottom: 0px;
+    margin-bottom: 80px;
     letter-spacing: 2px;
 `
 
@@ -127,14 +132,16 @@ const EyesImg = styled.img.attrs({
 
 `;
 
-const GlobalNav = (props) => {
 
+const GlobalNav = (props) => {
     return(
         <>  
             <Header />
             <NavWrap>
                 <DesignPart>
+                
                     <DesignPartTitleBox>
+                        <OvalBtn className="yearOval" border_color={'#FFFFFF'} border_width={1} background={'#FFFFFF'} color={'#000'} height={50} width={120} font_size={15} text={'2020'}></OvalBtn>
                         <CloudImg img={img_top1} top={63} bottom={0} left={0} right={0} size={68}/>
                         <CloudImg img={img_top2} top={23} bottom={0} left={15} right={0} size={30}/>
                         <CloudImg img={img_top3} top={75} bottom={9} left={15} right={0} size={28}/>

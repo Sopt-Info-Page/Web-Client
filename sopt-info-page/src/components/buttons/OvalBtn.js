@@ -12,10 +12,10 @@ const Oval = style.div`
   display: flex;
   border-radius: ${props => props.width/2}px / ${(props) => props.height/2}px;
 `
-function OvalBtn({text, border_color, border_width, background, color, width, height, font_size}) {
+function OvalBtn({text, border_color, border_width, background, color, width, height, font_size, className}) {
   return (
   <>
-    <Oval border_color={border_color} border_width={border_width} background={background} color={color} height={height} width={width} font_size={font_size}>{text}</Oval>
+    <Oval className={className} border_color={border_color} border_width={border_width} background={background} color={color} height={height} width={width} font_size={font_size}>{text}</Oval>
   </>
   );
 }

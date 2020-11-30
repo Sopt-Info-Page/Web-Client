@@ -1,5 +1,7 @@
 import React from 'react';
+import './Footer.scss';
 import styled from "styled-components";
+import OvalBtn from "../buttons/OvalBtn";
 import img_sopt_logo from './img_sopt_logo.png';
 
 const FooterWrapper = styled.div`
@@ -12,6 +14,10 @@ const FooterWrapper = styled.div`
 
 const SocialWrapper = styled.div`
     width: 50%;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 50px;
+    margin-bottom: 100px;
 `;
 
 const LogoWrapper = styled.div`
@@ -41,7 +47,11 @@ const CopyRight = styled.span`
 const Footer = (props) => (
       <>
         <FooterWrapper>
-            <SocialWrapper></SocialWrapper>
+            <SocialWrapper>
+                <OvalBtn className="socialOval" border_color={'#FFFFFF'} border_width={1} background={'#FFFFFF'} color={'#FF0404'} height={50} width={120} font_size={12} text={'YouTube'}></OvalBtn>
+                <OvalBtn className="socialOval" border_color={'#FFFFFF'} border_width={1} background={'#FFFFFF'} color={'#0C41FF'} height={50} width={120} font_size={12} text={'Facebook'}></OvalBtn>
+                <OvalBtn className="socialOval" border_color={'#FFFFFF'} border_width={1} background={'#FFFFFF'} color={'#000'} height={50} width={120} font_size={12} text={'sopt.org'}></OvalBtn>
+            </SocialWrapper>
             <LogoWrapper>
                 <Logo></Logo>
                 <CopyRight>&copy;2020,SOPT. All rights reserved.</CopyRight>
