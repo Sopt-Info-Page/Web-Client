@@ -4,6 +4,7 @@ import styled, {createGlobalStyle, keyframes, css} from "styled-components";
 import Header from "../header/Header";
 import FlowBanner from "../banner/FlowBanner";
 import OvalBtn from "../buttons/OvalBtn";
+import RoundPillBtn from "../buttons/RoundPillBtn";
 import img_top1 from './img_top1.png';
 import img_top2 from './img_top2.png';
 import img_top3 from './img_top3.png';
@@ -11,6 +12,7 @@ import img_top4 from './img_top4.png';
 import img_top5 from './img_top5.png';
 import img_top6 from './img_top6.png';
 import img_top7 from './img_top7.png';
+import down from './down.png';
 import eyes from './eyes.png';
 
 const NavWrap = styled.div`
@@ -29,7 +31,6 @@ const DesignPart = styled.div`
 `
 
 const DesignPartTitleBox = styled.div`
-    /* border: 1px solid red; */
     width: 700px;
     height: 350px;
     position:relative;
@@ -64,6 +65,20 @@ const DesignPartTitle = styled.span`
     letter-spacing: 2px;
 `
 
+const DownArrow = styled.img.attrs(props => ({
+    src: down,
+}))
+`   
+    display:block;
+    width: 60px;
+`
+
+const AboutBox = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+`;
 
 const DesignPartItem = styled.span`
     display: block;
@@ -79,9 +94,20 @@ const JoinPart = styled.div`
     width: 100%;
     height: 920px;
     display:flex;
-    flex-direction: column;
+    flex-direction:column;
     align-items:center;
-    justify-content: space-around;
+    position: relative;
+`;
+
+const JoinBox = styled.div`
+    /* border: 1px solid red; */
+    padding-top: 50px;
+    width:100%;
+    height: 680px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:center;
 `;
 
 const JoinPartDescBox = styled.div`
@@ -90,6 +116,7 @@ const JoinPartDescBox = styled.div`
     display:flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 80px;
 `;
 
 const JoinPartDesc = styled.span`
@@ -104,6 +131,7 @@ const JoinUs = styled.div`
     flex-direction:column;
     justify-content:center;
     align-items:center;
+    margin-bottom: 50px;
 `;
 
 const JoinUsText = styled.span`
@@ -133,6 +161,7 @@ const EyesImg = styled.img.attrs({
 `;
 
 
+
 const GlobalNav = (props) => {
     return(
         <>  
@@ -155,23 +184,31 @@ const GlobalNav = (props) => {
                 </DesignPart>
                 <FlowBanner firstflow/>
                 <JoinPart>
-                    <JoinPartDescBox>
-                        <JoinPartDesc>
-                        S.O.P.T. stands for Shout Our Passion Together<br/>
-                        and is a college student union club.<br/>
-                        The club consists of college students<br/> 
-                        from universities in the Seoul metropolitan area<br/> 
-                        and aims to start an IT business.
-                        </JoinPartDesc>
-                    </JoinPartDescBox>
-
-                    <JoinUs>
-                        <JoinUsText>Join us!</JoinUsText>
-                        <EyesImg />
-                    </JoinUs>
+                    <JoinBox>
+                        <AboutBox>
+                            <OvalBtn className="yearOval" border_color={'#FFFFFF'} border_width={1} background={'#8DFF65'} color={'#FFFFFF'} height={50} width={120} font_size={15} text={'about'}></OvalBtn>
+                            <DownArrow />
+                        </AboutBox>
+                        <JoinPartDescBox>
+                            <JoinPartDesc>
+                            S.O.P.T. stands for Shout Our Passion Together<br/>
+                            and is a college student union club.<br/>
+                            The club consists of college students<br/> 
+                            from universities in the Seoul metropolitan area<br/> 
+                            and aims to start an IT business.
+                            </JoinPartDesc>
+                        </JoinPartDescBox>
+                        <JoinUs>
+                                <JoinUsText>Join us!</JoinUsText>
+                                <EyesImg />
+                        </JoinUs>
+                        
+                    </JoinBox>
+                    <RoundPillBtn className="roundPill" text={'so who are you?'}/>
                 </JoinPart>
-                <Temp></Temp>
+                <Temp>-- WE ARE PART --</Temp>
                 <FlowBanner secondflow/>
+                <Temp>-- MORE PART --</Temp>
             </NavWrap>
         </>
     );
