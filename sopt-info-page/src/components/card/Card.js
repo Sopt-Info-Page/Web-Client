@@ -5,7 +5,7 @@ import ic_phone from './ic_phone.png';
 
 
 const CardWrap = style.div`
-    position: absolute;
+
     width: 30vw;
     height: 35vw;
     border-radius: 2.2vw;
@@ -54,7 +54,7 @@ const CardSmallImg = style.img`
 
 const CardSpeechBubble = style.div`
     padding: 1.8vw 1vw;
-    font-size: 17px;
+    font-size: 0.9vw;
     font-weight: 500;
     width: auto;
     max-width: 21vw;
@@ -88,7 +88,7 @@ const CardContents = style.div`
 const CardMbtiTag = style.div`
     display: ${(props) => (props.isHover ? 'none' : 'box')};
     
-    font-size: 17px;
+    font-size: 0.9vw;
     font-weight: bold;
     color: #ffffff;
     background-color: #BA34B5;
@@ -96,7 +96,7 @@ const CardMbtiTag = style.div`
     height: auto;
     padding: 0.4vw 0;
     text-align: center;
-    line-height: 17px;
+    line-height: 0.9vw;
     border-radius: 1vw;
     position: relative;
     top: 50%; left: 7%;
@@ -111,12 +111,12 @@ const CardPartName = style.div`
 `;
 
 const CardPart = style.div`
-    font-size: 17px;
+    font-size: 0.9vw;
     font-weight: 500;
 `;
 
 const CardName = style.div`
-    font-size: 27px;
+    font-size: 1.43vw;
     font-weight: bold;
 `;
 
@@ -142,7 +142,7 @@ const CardContentIcon = style.img`
 `;
 
 const CardContentText = style.div`
-    font-size: 17px;
+    font-size: 0.9vw;
     font-weight: 500;
 `;
 

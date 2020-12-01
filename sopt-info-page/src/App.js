@@ -1,6 +1,8 @@
 import './App.scss';
 import Footer from "./components/footer/Footer"; //
 import GlobalNav from "./components/nav/GlobalNav";
+import CardList from './components/card/CardList';
+import Card from './components/card/Card';
 
 function App() {
   return (

@@ -20,6 +20,8 @@ import rightCloud from './right-cloud.png';
 import down from './down.png';
 import blackdown from './blackdown.png';
 import eyes from './eyes.png';
+import CardList from '../card/CardList';
+import Card from '../card/Card';
 
 
 const NavWrap = styled.div`
@@ -169,8 +171,8 @@ const EyesImg = styled.img.attrs({
 // Start We are Part 
 
 const WeArePart = styled.div`     
-    width: 100%;
-    height: 800px;
+    width: 100vw;
+    height: 100vw;
     background-color: #FFFFFF;
 `;
 
@@ -322,7 +324,7 @@ const GlobalNav = (props) => {
                 </JoinPart>
 
                 <WeArePart>
-                    
+                    <CardList />
                 </WeArePart>
                 <FlowBanner secondflow/>
                 
