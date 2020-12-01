@@ -5,7 +5,7 @@ function Member({ match }) {
   // match.path : '/member'
   return (
     <section>
-      <header></header>
+      <h1>멤버페이지 입니다</h1>
     </section>
   );
 }

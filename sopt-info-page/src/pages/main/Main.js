@@ -3,7 +3,7 @@ import './Main.scss';
 function Main() {
   return (
     <section>
-      <header></header>
+      <h1>메인페이지 입니다</h1>
     </section>
   );
 }
