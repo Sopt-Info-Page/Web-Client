@@ -1,11 +1,9 @@
 import style from 'styled-components';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ic_email from './ic_email.png';
 import ic_phone from './ic_phone.png';
 
-
 const CardWrap = style.div`
-
     width: 30vw;
     height: 35vw;
     border-radius: 2.2vw;
@@ -18,13 +16,14 @@ const CardWrap = style.div`
 const CardImg = style.img`
     width: 30vw;
     height: 27.5vw;
-    @media (max-width: 1024px){
-
-    }
+    background-image: url("https://i.pinimg.com/originals/a5/17/e3/a517e38cc2aa4003a639acd54680d516.jpg");
+    background-repeat:no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
 `;
 
 const CardImgHover = style.div`
-    display: ${(props) => (props.isHover ? 'flex' : 'none')};  
+    display: ${props => (props.isHover ? 'flex' : 'none')};  
     flex-direction: column;
     background-color: rgba(0,0,0,0.3);
     border-radius: 2.2vw;
@@ -86,7 +85,7 @@ const CardContents = style.div`
 `;
 
 const CardMbtiTag = style.div`
-    display: ${(props) => (props.isHover ? 'none' : 'box')};
+    display: ${props => (props.isHover ? 'none' : 'box')};
     
     font-size: 0.9vw;
     font-weight: bold;
@@ -104,7 +103,7 @@ const CardMbtiTag = style.div`
 
 const CardPartName = style.div`
     /*display: flex;*/
-    display: ${(props) => (props.isHover ? 'none' : 'flex')};
+    display: ${props => (props.isHover ? 'none' : 'flex')};
     flex-direction: column;
     align-items: flex-end;
     margin-right: 3vw;
@@ -121,12 +120,11 @@ const CardName = style.div`
 `;
 
 const CardContentWrap = style.div`
-    display: ${(props) => (props.isHover ? 'flex' : 'none')};
+    display: ${props => (props.isHover ? 'flex' : 'none')};
     flex-direction: column;
     margin-top: 0.5vw;
     margin-left: 3vw;
 `;
-
 
 const CardContent = style.div`
     display: flex;
@@ -146,61 +144,61 @@ const CardContentText = style.div`
     font-weight: 500;
 `;
 
-const str1 = "Manzu";
-const str2 = "If you want to contact me, plz send a email below. Thank you!";
-const str3 = "#mbti";
-const str4 = "Grapthic Designer";
-const str5 = "SiCei Kim";
-const str6 = "hyunjin@gmail.com";
-const str7 = "+821087245697";
+const str1 = 'Manzu';
+const str2 = 'If you want to contact me, plz send a email below. Thank you!';
+const str3 = '#mbti';
+const str4 = 'Grapthic Designer';
+const str5 = 'SiCei Kim';
+const str6 = 'hyunjin@gmail.com';
+const str7 = '+821087245697';
 
 const Card = ({ memberData }) => {
-    const [isHover, setIsHover] = useState(false);
-    
-    const onHandleMouseOver = () => {
-        setIsHover(true);
-        console.log(isHover);
-    };
+  const [isHover, setIsHover] = useState(false);
 
-    const onHandleMouseLeave = () => {
-        setIsHover(false);
-        console.log(isHover);
-    };
-    
-    return(
-        <>
-            <CardWrap>
-                <CardImg onMouseOver={onHandleMouseOver}/>
-                <CardImgHover onMouseLeave = {onHandleMouseLeave} isHover={isHover}>
-                    <CardImgBubble>
-                        <CardSmallImg />
-                        <CardSpeechBubble>Hi, I'm {str1}!</CardSpeechBubble>
-                    </CardImgBubble>
-                    <CardImgBubble>
-                        <CardSmallImg />
-                        <CardSpeechBubble>{str2}</CardSpeechBubble>
-                    </CardImgBubble>
-                </CardImgHover>
-                <CardContents>
-                    <CardMbtiTag isHover={isHover}>{str3}</CardMbtiTag>
-                    <CardPartName isHover={isHover}>
-                        <CardPart>{str4}</CardPart>
-                        <CardName>{str5}</CardName>
-                    </CardPartName>
-                    <CardContentWrap isHover={isHover}> 
-                        <CardContent>
-                            <CardContentIcon src={ic_email}/>
-                            <CardContentText>{str6}</CardContentText>
-                        </CardContent>
-                        <CardContent>
-                            <CardContentIcon src={ic_phone}/>
-                            <CardContentText>{str7}</CardContentText>
-                        </CardContent>
-                    </CardContentWrap>
-                </CardContents>
-            </CardWrap>
-        </>
-    );
-}
+  const onHandleMouseOver = () => {
+    setIsHover(true);
+    console.log(isHover);
+  };
+
+  const onHandleMouseLeave = () => {
+    setIsHover(false);
+    console.log(isHover);
+  };
+
+  return (
+    <>
+      <CardWrap>
+        <CardImg onMouseOver={onHandleMouseOver} />
+        <CardImgHover onMouseLeave={onHandleMouseLeave} isHover={isHover}>
+          <CardImgBubble>
+            <CardSmallImg />
+            <CardSpeechBubble>Hi, I'm {str1}!</CardSpeechBubble>
+          </CardImgBubble>
+          <CardImgBubble>
+            <CardSmallImg />
+            <CardSpeechBubble>{str2}</CardSpeechBubble>
+          </CardImgBubble>
+        </CardImgHover>
+        <CardContents>
+          <CardMbtiTag isHover={isHover}>{str3}</CardMbtiTag>
+          <CardPartName isHover={isHover}>
+            <CardPart>{str4}</CardPart>
+            <CardName>{str5}</CardName>
+          </CardPartName>
+          <CardContentWrap isHover={isHover}>
+            <CardContent>
+              <CardContentIcon src={ic_email} />
+              <CardContentText>{str6}</CardContentText>
+            </CardContent>
+            <CardContent>
+              <CardContentIcon src={ic_phone} />
+              <CardContentText>{str7}</CardContentText>
+            </CardContent>
+          </CardContentWrap>
+        </CardContents>
+      </CardWrap>
+    </>
+  );
+};
 
 export default Card;
