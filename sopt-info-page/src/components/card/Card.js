@@ -43,12 +43,12 @@ const CardImgBubble = style.div`
 `;
 
 const CardSmallImg = style.img`
-    border: solid 1px;
     width: 3.5vw;
     height: 3.5vw;
     border-radius: 50%;
     margin-top: 2vw; 
     margin-right: 1vw;
+    
 `;
 
 const CardSpeechBubble = style.div`
@@ -171,11 +171,11 @@ const Card = ({ memberData }) => {
         <CardImg onMouseOver={onHandleMouseOver} />
         <CardImgHover onMouseLeave={onHandleMouseLeave} isHover={isHover}>
           <CardImgBubble>
-            <CardSmallImg />
+            <CardSmallImg src="https://i.pinimg.com/originals/a5/17/e3/a517e38cc2aa4003a639acd54680d516.jpg"/>
             <CardSpeechBubble>Hi, I'm {str1}!</CardSpeechBubble>
           </CardImgBubble>
           <CardImgBubble>
-            <CardSmallImg />
+            <CardSmallImg src="https://i.pinimg.com/originals/a5/17/e3/a517e38cc2aa4003a639acd54680d516.jpg"/>
             <CardSpeechBubble>{str2}</CardSpeechBubble>
           </CardImgBubble>
         </CardImgHover>
