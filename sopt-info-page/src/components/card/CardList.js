@@ -1,6 +1,6 @@
 import style from 'styled-components';
 import Card from './Card';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
@@ -36,13 +36,11 @@ const SideText = style.div`
     color: #969696;
 `;
 
-
 const CardWrap = style.div`
     width: 100vw;
     overflow: hidden;
     margin: 0;
 `;
-
 
 const Cards = style.div`
     width: 100vw;
@@ -54,7 +52,6 @@ const Cards = style.div`
     padding: 5vw 5vw;
 `;
 
-
 const BtnWrap = style.div`
     width: 100vw;
     height: 20vw;
@@ -64,7 +61,6 @@ const BtnWrap = style.div`
     align-items: center;
     margin-bottom: 10vw;
 `;
-
 
 const Btn = style.button`
     width: 10vw;
@@ -82,84 +78,80 @@ const Btn = style.button`
     }
 `;
 
-
 const CardList = () => {
-    const onClickLeft = (e) => {
-     
-    }
-    
-    const onClickRight = (e) => {
-      
-    }
+  const onClickLeft = e => {};
 
-    const onClickAll = () => {
+  const onClickRight = e => {};
 
-    }
+  const onClickAll = () => {};
 
-    
-    return(
-        <>
-            <Wrap>
-                <HeadWrap>
-                    <HeadText>We are,</HeadText>
-                    <SideText onClick={onClickAll}>See ALL</SideText>
-                </HeadWrap>
-                <CardWrap>
-                    {/* <Cards>
+  return (
+    <>
+      <Wrap>
+        <HeadWrap>
+          <HeadText>We are,</HeadText>
+          <SideText onClick={onClickAll}>See ALL</SideText>
+        </HeadWrap>
+        <CardWrap>
+          {/* <Cards>
                        <Card/>
                        <Card/>
                        <Card/>
                     </Cards> */}
-                    <Swiper
-                        spaceBetween={0}
-                        slidesPerview={1}
-                        loop={true}
-                        style={{width:'100vw', height:'40vw'}}
-                    >
-                        <SwiperSlide 
-                            style={{width:'100vw',
-                                    padding:'0 3vw',
-                                    display:'flex', 
-                                    flexDirection:'row', 
-                                    justifyContent:'space-around', 
-                                    alignItems:'center'}}
-                        >
-                            <Card/>
-                            <Card/>
-                            <Card/>
-                        </SwiperSlide>
-                        <SwiperSlide 
-                            style={{width:'100vw',
-                                    padding:'0 3vw',
-                                    display:'flex', 
-                                    flexDirection:'row', 
-                                    justifyContent:'space-around', 
-                                    alignItems:'center'}}
-                        >
-                            
-                            <Card/>
-                            <Card/>
-                        </SwiperSlide>
-                        <SwiperSlide 
-                            style={{width:'100vw',
-                                    padding:'0 3vw',
-                                    display:'flex', 
-                                    flexDirection:'row', 
-                                    justifyContent:'space-around', 
-                                    alignItems:'center'}}
-                        >
-                           
-                            <Card/>
-                        </SwiperSlide>
-                    </Swiper>
-                </CardWrap>
-                {/* <BtnWrap>
+          <Swiper
+            spaceBetween={0}
+            slidesPerview={1}
+            loop={true}
+            style={{ width: '100vw', height: '40vw' }}
+          >
+            <SwiperSlide
+              style={{
+                width: '100vw',
+                padding: '0 3vw',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                alignItems: 'center',
+              }}
+            >
+              <Card className="invisible" />
+              <Card />
+              <Card />
+            </SwiperSlide>
+            <SwiperSlide
+              style={{
+                width: '100vw',
+                padding: '0 3vw',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                alignItems: 'center',
+              }}
+            >
+              <Card />
+              <Card />
+            </SwiperSlide>
+            <SwiperSlide
+              style={{
+                width: '100vw',
+                padding: '0 3vw',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                alignItems: 'center',
+              }}
+            >
+              <Card />
+            </SwiperSlide>
+          </Swiper>
+        </CardWrap>
+        {/* <BtnWrap>
                     <Btn onClick={onClickLeft}>&larr;</Btn>
                     <Btn onClick={onClickRight}>&rarr;</Btn>
                 </BtnWrap> */}
-            </Wrap>
-        </>
-    );
-}
+      </Wrap>
+    </>
+  );
+};
 
 export default CardList;
