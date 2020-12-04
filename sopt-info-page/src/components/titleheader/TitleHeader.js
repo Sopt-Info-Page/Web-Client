@@ -13,16 +13,16 @@ import img_top7 from '../../assets/navImg/img_top7.png';
 
 const TitleHeaderWrapper = styled.div`
   width: 100%;
-  height: 540px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   background-color: #8dff65;
+  padding-top: 120px;
 `;
 
 const TitleHeaderBox = styled.div`
-  width: 700px;
+  width: 60vw;
   height: 350px;
   position: relative;
   display: flex;
@@ -34,11 +34,12 @@ const TitleHeaderBox = styled.div`
 const DesignPartTitle = styled.span`
   display: block;
   text-align: center;
-  font-size: 60px;
+  font-size: min(max(30px, 5vw), 76px);
   font-weight: 700;
   line-height: 72px;
   margin-bottom: 80px;
   letter-spacing: 2px;
+  position: relative;
 `;
 
 const CloudImg = styled.img.attrs(props => ({
@@ -64,7 +65,8 @@ const DesignPartItem = styled.span`
   letter-spacing: 2px;
 `;
 
-const mainTitle = 'ON SOPT DESIGN TEAM';
+const mainTitle1 = `ON SOPT `;
+const mainTitle2 = `DESIGN TEAM`;
 const memberTitle = 'We are,';
 
 const TitleHeader = ({ main }) => (
@@ -137,8 +139,11 @@ const TitleHeader = ({ main }) => (
         right={10}
         size={30}
       />
+      <DesignPartTitle designTitle={main} className="mb-0">
+        {main ? mainTitle1 : memberTitle}
+      </DesignPartTitle>
       <DesignPartTitle designTitle={main}>
-        {main ? mainTitle : memberTitle}
+        {main ? mainTitle2 : ''}
       </DesignPartTitle>
     </TitleHeaderBox>
     <DesignPartItem>Shout our passion together</DesignPartItem>

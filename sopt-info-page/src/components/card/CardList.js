@@ -8,7 +8,6 @@ import 'swiper/components/navigation/navigation.scss';
 
 const Wrap = style.div`
     width: 100vw;
-    height: 100vw;
     display: flex;
     flex-direction: column;
 `;
@@ -16,7 +15,7 @@ const Wrap = style.div`
 const HeadWrap = style.div`
     width: 100vw;
     height: 10vw;
-    margin-top: 20vw;
+    margin-top: 10rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -59,12 +58,13 @@ const BtnWrap = style.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10vw;
 `;
 
 const Btn = style.button`
     width: 10vw;
+    max-width:150px;
     height: 10vw;
+    max-height:150px;
     border-radius: 50%;
     font-size: 4vw;
     background-color: white;

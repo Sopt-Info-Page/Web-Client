@@ -6,7 +6,6 @@ import OvalBtn from './buttons/OvalBtn';
 import img_sopt_logo from '../assets/footerImg/img_sopt_logo.png';
 //
 const FooterWrapper = styled.div`
-  margin-top: 200px;
   width: 100%;
   height: 439px;
   background-image: linear-gradient(#ffffff, #8dff65);

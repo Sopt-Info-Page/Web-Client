@@ -7,6 +7,7 @@ import img_sopt_logo from '../assets/headerImg/img_sopt_logo.png';
 
 const NavWrap = styled.div`
   width: 100%;
+  position: absolute;
   height: 110px;
   background-color: #8dff65;
   display: flex;
@@ -29,7 +30,7 @@ const NavMenu = styled.div`
 `;
 
 const NavMenuItem = styled.span`
-  font-size: 20px;
+  font-size: max(16px, 2vw);
   font-weight: 400;
   margin-left: 20px;
   line-height: 25px;

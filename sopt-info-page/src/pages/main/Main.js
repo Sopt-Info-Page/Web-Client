@@ -41,7 +41,6 @@ const AboutBox = styled.div`
 
 const JoinPart = styled.div`
   width: 100%;
-  height: 920px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,9 +48,8 @@ const JoinPart = styled.div`
 `;
 
 const JoinBox = styled.div`
-  padding-top: 50px;
+  padding: 50px;
   width: 100%;
-  height: 680px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,30 +58,26 @@ const JoinBox = styled.div`
 
 const JoinPartDescBox = styled.div`
   width: 100%;
-  height: 280px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 80px;
 `;
 
 const JoinPartDesc = styled.span`
-  font-size: 38px;
+  font-size: 3vw;
   text-align: center;
 `;
 
 const JoinUs = styled.div`
-  width: 350px;
-  height: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin: 3vw 0;
 `;
 
 const JoinUsText = styled.span`
-  font-size: 60px;
+  font-size: 4vw;
   font-weight: 700;
   color: #fff;
   line-height: 72px;
@@ -93,9 +87,7 @@ const JoinUsText = styled.span`
 const EyesImg = styled.img.attrs({
   src: eyes,
 })`
-  display: block;
-  width: 100px;
-  height: 100px;
+  width: 10vw;
 `;
 
 // End About & Join Part
@@ -104,8 +96,8 @@ const EyesImg = styled.img.attrs({
 
 const WeArePart = styled.div`
   width: 100vw;
-  height: 100vw;
   background-color: #ffffff;
+  height: auto;
 `;
 
 // End We are Part
@@ -116,7 +108,7 @@ const MorePart = styled.div`
   width: 100%;
   height: auto;
   background-color: #ffffff;
-  padding-top: 80px;
+  padding-top: 50px;
 `;
 
 const MoreBox = styled.div`
@@ -154,7 +146,7 @@ const MoreContent = styled.div`
 
 const MoreContentItem = styled.span`
   display: block;
-  font-size: 30px;
+  font-size: 2vw;
   text-align: left;
 `;
 
