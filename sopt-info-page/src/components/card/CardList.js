@@ -78,19 +78,21 @@ const Btn = style.button`
     }
 `;
 
-const CardList = () => {
+const CardList = ({ history }) => {
   const onClickLeft = e => {};
 
   const onClickRight = e => {};
-
-  const onClickAll = () => {};
-
   return (
     <>
       <Wrap>
         <HeadWrap>
           <HeadText>We are,</HeadText>
-          <SideText onClick={onClickAll}>See ALL</SideText>
+          <SideText
+            className="c-pointer"
+            onClick={() => history.push('/member#MemberList')}
+          >
+            See ALL
+          </SideText>
         </HeadWrap>
         <CardWrap>
           <Swiper

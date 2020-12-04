@@ -6,7 +6,7 @@ import OvalBtn from '../../components/buttons/OvalBtn';
 import RoundPillBtn from '../../components/buttons/RoundPillBtn';
 import CardList from '../../components/card/CardList';
 import TitleHeader from '../../components/titleheader/TitleHeader';
-import { Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // Img import
 import emoji1 from '../../assets/navImg/emoji1.png';
@@ -223,7 +223,7 @@ const Main = props => {
           <RoundPillBtn className="roundPill" text={'so who are you?'} />
         </JoinPart>
         <WeArePart>
-          <CardList />
+          <Route component={CardList} />
         </WeArePart>
         <FlowBanner secondflow />
         <MorePart>

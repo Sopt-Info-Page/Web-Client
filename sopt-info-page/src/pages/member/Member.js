@@ -7,6 +7,7 @@ function Member({ match }) {
   return (
     <section>
       <TitleHeader member />
+      <div id="MemberList" style={{ height: '200px' }}></div>
     </section>
   );
 }
