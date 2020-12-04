@@ -1,11 +1,12 @@
 import './Member.scss';
+import TitleHeader from '../../components/titleheader/TitleHeader';
 
 function Member({ match }) {
   // match : { params, url, path ... }
   // match.path : '/member'
   return (
     <section>
-      <h1>멤버페이지 입니다</h1>
+      <TitleHeader member />
     </section>
   );
 }
