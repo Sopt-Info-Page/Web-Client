@@ -4407,3 +4407,6 @@ a.text-dark:hover {
 .invisible {
   visibility: hidden !important;
 }
+.c-pointer {
+  cursor: pointer;
+}
