@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import img_sopt_logo from './img_sopt_logo.png';
+
+// img Import
+import img_sopt_logo from '../../assets/headerImg/img_sopt_logo.png';
+// 
 
 const NavWrap = styled.div`
   width: 100%;

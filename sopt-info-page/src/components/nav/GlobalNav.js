@@ -5,24 +5,27 @@ import Header from '../header/Header';
 import FlowBanner from '../banner/FlowBanner';
 import OvalBtn from '../buttons/OvalBtn';
 import RoundPillBtn from '../buttons/RoundPillBtn';
-import img_top1 from './img_top1.png';
-import img_top2 from './img_top2.png';
-import img_top3 from './img_top3.png';
-import img_top4 from './img_top4.png';
-import img_top5 from './img_top5.png';
-import img_top6 from './img_top6.png';
-import img_top7 from './img_top7.png';
-import emoji1 from './emoji1.png';
-import emoji2 from './emoji2.png';
-import emoji3 from './emoji3.png';
-import leftCloud from './left-cloud.png';
-import rightCloud from './right-cloud.png';
-import down from './down.png';
-import blackdown from './blackdown.png';
-import eyes from './eyes.png';
 import CardList from '../card/CardList';
-import Card from '../card/Card';
 import { Route } from 'react-router-dom';
+
+// Img import
+import img_top1 from '../../assets/navImg/img_top1.png';
+import img_top2 from '../../assets/navImg/img_top2.png';
+import img_top3 from '../../assets/navImg/img_top3.png';
+import img_top4 from '../../assets/navImg/img_top4.png';
+import img_top5 from '../../assets/navImg/img_top5.png';
+import img_top6 from '../../assets/navImg/img_top6.png';
+import img_top7 from '../../assets/navImg/img_top7.png';
+import emoji1 from '../../assets/navImg/emoji1.png';
+import emoji2 from '../../assets/navImg/emoji2.png';
+import emoji3 from '../../assets/navImg/emoji3.png';
+import leftCloud from '../../assets/navImg/left-cloud.png';
+import rightCloud from '../../assets/navImg/right-cloud.png';
+import down from '../../assets/navImg/down.png';
+import blackdown from '../../assets/navImg/blackdown.png'
+import eyes from '../../assets/navImg/eyes.png';
+// 
+
 
 const NavWrap = styled.div`
   width: 100%;

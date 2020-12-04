@@ -2,8 +2,10 @@ import React from 'react';
 import './Footer.scss';
 import styled from "styled-components";
 import OvalBtn from "../buttons/OvalBtn";
-import img_sopt_logo from './img_sopt_logo.png';
 
+// img import
+import img_sopt_logo from '../../assets/footerImg/img_sopt_logo.png';
+// 
 const FooterWrapper = styled.div`
     
     margin-top: 200px;
