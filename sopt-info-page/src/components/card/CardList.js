@@ -93,11 +93,6 @@ const CardList = () => {
           <SideText onClick={onClickAll}>See ALL</SideText>
         </HeadWrap>
         <CardWrap>
-          {/* <Cards>
-                       <Card/>
-                       <Card/>
-                       <Card/>
-                    </Cards> */}
           <Swiper
             spaceBetween={0}
             slidesPerview={1}
@@ -145,10 +140,10 @@ const CardList = () => {
             </SwiperSlide>
           </Swiper>
         </CardWrap>
-        {/* <BtnWrap>
-                    <Btn onClick={onClickLeft}>&larr;</Btn>
-                    <Btn onClick={onClickRight}>&rarr;</Btn>
-                </BtnWrap> */}
+        <BtnWrap>
+          <Btn onClick={onClickLeft}>&larr;</Btn>
+          <Btn onClick={onClickRight}>&rarr;</Btn>
+        </BtnWrap>
       </Wrap>
     </>
   );

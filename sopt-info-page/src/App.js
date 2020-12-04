@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-import Footer from './components/footer/Footer'; //
-import GlobalNav from './components/nav/GlobalNav';
+import Footer from './components/Footer'; //
+import Gnb from './components/Gnb';
 import Main from './pages/main/Main';
 import Member from './pages/member/Member';
 
@@ -9,7 +8,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <GlobalNav />
+        <Route component={Gnb} />
         <Switch>
           {/* exact : path에 따라 맞는 컴포넌트 출력 */}
           <Route exact path="/" component={Main} /> {/* 메인 화면 */}

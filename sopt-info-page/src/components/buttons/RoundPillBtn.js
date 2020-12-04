@@ -1,9 +1,9 @@
-import './RoundPillBtn.scss';
-
-function RoundPillBtn({text, className}) {
+function RoundPillBtn({ text, className }) {
   return (
     <>
-      <div className= {className} className="roundPill">{text}</div>
+      <div className={className} className="roundPill">
+        {text}
+      </div>
     </>
   );
 }

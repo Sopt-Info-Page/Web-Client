@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 // img Import
-import img_sopt_logo from '../../assets/headerImg/img_sopt_logo.png';
-// 
+import img_sopt_logo from '../assets/headerImg/img_sopt_logo.png';
+//
 
 const NavWrap = styled.div`
   width: 100%;
@@ -40,7 +40,7 @@ const NavMenuItem = styled.span`
 const menuWho = 'Who we are';
 const menuWhere = 'Where we are';
 
-const Header = ({ history }) => {
+const Gnb = ({ history }) => {
   return (
     <>
       <NavWrap>
@@ -56,4 +56,4 @@ const Header = ({ history }) => {
   );
 };
 
-export default Header;
+export default Gnb;

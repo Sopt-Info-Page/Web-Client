@@ -1,2 +1,52 @@
-.div {
+.yearOval {
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.moreOval {
+  font-size: 20px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  &:hover {
+    background-color: #000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    transition: all 0.3s ease;
+  }
+}
+
+.aboutOval {
+  font-size: 20px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  &:hover {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    color: #8dff65;
+    transition: all 0.3s ease;
+  }
+}
+
+.roundPill {
+  width: 620px;
+  height: 168px;
+  background: #ffffff;
+  border-radius: 84px;
+  box-shadow: 0.3vw 0.3vw 1vw 0 rgba(38, 44, 52, 0.1);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  text-align: center;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  bottom: -81px;
+  &:hover {
+    background-color: #000;
+    color: #ffffff;
+    transition: all 0.3s ease;
+  }
 }
