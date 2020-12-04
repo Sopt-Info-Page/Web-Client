@@ -1,7 +1,7 @@
 import style from 'styled-components';
 import React, { useState } from 'react';
-import ic_email from './ic_email.png';
-import ic_phone from './ic_phone.png';
+import ic_email from '../../assets/cardImg/ic_email.png';
+import ic_phone from '../../assets/cardImg/ic_phone.png';
 
 const CardWrap = style.div`
     width: 30vw;

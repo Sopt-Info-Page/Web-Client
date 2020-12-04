@@ -1,5 +1,5 @@
-import left from './left.png'
-import right from './right.png'
+import left from '../../assets/buttonsImg/left.png'
+import right from '../../assets/buttonsImg/right.png'
 import style from 'styled-components';
 
 const Icon = style.img`
