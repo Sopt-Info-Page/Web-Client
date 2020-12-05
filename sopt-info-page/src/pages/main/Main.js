@@ -25,11 +25,22 @@ const NavWrap = styled.div`
 
 // Start About & Join Part
 
+const moveDown = keyframes`
+  0% {
+    transform: translateY(-10px)
+  }
+
+  100% {
+    transform: translateY(10px)
+  }
+`;
+
 const DownArrow = styled.img.attrs(props => ({
   src: down,
 }))`
   display: block;
   width: 60px;
+  animation: ${moveDown} 0.6s ease-in infinite alternate;
 `;
 
 const AboutBox = styled.div`
@@ -123,6 +134,7 @@ const DownArrowBlack = styled.img.attrs(props => ({
 }))`
   display: block;
   width: 60px;
+  animation: ${moveDown} 0.6s ease-in infinite alternate;
 `;
 
 const MoreContentWrapper = styled.div`
