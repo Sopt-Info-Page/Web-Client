@@ -61,12 +61,14 @@ const CardImgHover = style.div`
       width: 42vw;
       height: 42vw;
       padding-top: 3.5vw;
+      border-radius: 3.08vw;
     }
   
     @media only screen and (max-width: 768px){
       width: 60vw;
       height: 60vw;
       padding-top: 5vw;
+      border-radius: 4.4vw;
     }
 `;
 
