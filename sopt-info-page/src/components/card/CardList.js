@@ -33,6 +33,10 @@ const SideText = style.div`
     margin-top: 3.5vw;
     font-size: 1.3vw;
     color: #969696;
+
+    @media only screen and (max-width: 768px){
+      font-size: 8px;
+    }
 `;
 
 const CardWrap = style.div`
@@ -79,9 +83,9 @@ const Btn = style.button`
 `;
 
 const CardList = ({ history }) => {
-  const onClickLeft = e => {};
+  const onClickLeft = e => { };
 
-  const onClickRight = e => {};
+  const onClickRight = e => { };
   return (
     <>
       <Wrap>
