@@ -69,8 +69,19 @@ const mainTitle1 = `ON SOPT `;
 const mainTitle2 = `DESIGN TEAM`;
 const memberTitle = 'We are,';
 
+let particles = document.getElementsByClassName('particle');
+
+const onMouseMove = evt => {
+  let x = (evt.clientX * 100) / window.innerWidth + '%';
+  let y = (evt.clientY * 100) / window.innerHeight + '%';
+
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].style.transform = `translate(${x}, ${y})`;
+  }
+};
+
 const TitleHeader = ({ main }) => (
-  <TitleHeaderWrapper>
+  <TitleHeaderWrapper onMouseMove={onMouseMove}>
     <TitleHeaderBox>
       <OvalBtn
         className="yearOval"
@@ -84,6 +95,7 @@ const TitleHeader = ({ main }) => (
         text={'2020'}
       ></OvalBtn>
       <CloudImg
+        className="particle"
         img={img_top1}
         top={63}
         bottom={0}
@@ -92,6 +104,7 @@ const TitleHeader = ({ main }) => (
         size={68}
       />
       <CloudImg
+        className="particle"
         img={img_top2}
         top={23}
         bottom={0}
@@ -100,6 +113,7 @@ const TitleHeader = ({ main }) => (
         size={30}
       />
       <CloudImg
+        className="particle"
         img={img_top3}
         top={75}
         bottom={9}
@@ -108,6 +122,7 @@ const TitleHeader = ({ main }) => (
         size={28}
       />
       <CloudImg
+        className="particle"
         img={img_top4}
         top={15}
         bottom={0}
@@ -116,6 +131,7 @@ const TitleHeader = ({ main }) => (
         size={65}
       />
       <CloudImg
+        className="particle"
         img={img_top5}
         top={32}
         bottom={0}
@@ -124,6 +140,7 @@ const TitleHeader = ({ main }) => (
         size={30}
       />
       <CloudImg
+        className="particle"
         img={img_top6}
         top={35}
         bottom={0}
@@ -132,6 +149,7 @@ const TitleHeader = ({ main }) => (
         size={30}
       />
       <CloudImg
+        className="particle"
         img={img_top7}
         top={70}
         bottom={0}
