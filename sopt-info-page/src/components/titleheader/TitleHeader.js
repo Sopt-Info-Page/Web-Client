@@ -12,7 +12,7 @@ import img_top6 from '../../assets/navImg/img_top6.png';
 import img_top7 from '../../assets/navImg/img_top7.png';
 
 const TitleHeaderWrapper = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;

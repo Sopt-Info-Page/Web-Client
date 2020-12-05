@@ -1,10 +1,12 @@
 import style from 'styled-components';
 import Card from './Card';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
-import 'swiper/swiper.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/navigation/navigation.scss';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
+// import 'swiper/swiper.scss';
+// import 'swiper/components/pagination/pagination.scss';
+// import 'swiper/components/navigation/navigation.scss';
+import { React, useState, useEffect, useRef } from 'react';
+
 
 const Wrap = style.div`
     width: 100vw;
@@ -15,7 +17,7 @@ const Wrap = style.div`
 const HeadWrap = style.div`
     width: 100vw;
     height: 10vw;
-    margin-top: 10rem;
+    margin-top: 15vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -41,13 +43,35 @@ const SideText = style.div`
 
 const CardWrap = style.div`
     width: 100vw;
+    height: 45vw;
     overflow: hidden;
     margin: 0;
+
+    @media only screen and (max-width: 1024px){
+      height: 59vw;
+    }
+  
+    @media only screen and (max-width: 768px){
+      height: 80vw;
+    }
 `;
 
 const Cards = style.div`
-    width: 100vw;
-    position: relative;
+    width: ${props =>
+    props.getWidth < 1024 ? (
+      props.getWidth < 768 ?
+        props.getWidth * 0.65 * props.number + 'px'
+        : props.getWidth * 0.46 * props.number + 'px')
+      : props.getWidth * 0.33 * props.number + 'px'
+  };
+    height: ${props =>
+    props.getWidth < 1024 ? (
+      props.getWidth < 768 ?
+        props.getWidth * 0.7 + 'px'
+        : props.getWidth * 0.49 + 'px')
+      : props.getWidth * 0.35 + 'px'
+  };
+   
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -62,6 +86,7 @@ const BtnWrap = style.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10vw;
 `;
 
 const Btn = style.button`
@@ -83,9 +108,67 @@ const Btn = style.button`
 `;
 
 const CardList = ({ history }) => {
-  const onClickLeft = e => { };
+  const size = useWindowSize();
 
-  const onClickRight = e => { };
+  function useWindowSize() {
+    const isClient = typeof window === 'object';
+
+    function getSize() {
+      return {
+        width: isClient ? window.innerWidth : undefined,
+        height: isClient ? window.innerHeight : undefined
+      };
+    }
+
+    const [windowSize, setWindowSize] = useState(getSize);
+
+    useEffect(() => {
+      if (!isClient) {
+        return false;
+      }
+
+      function handleResize() {
+        setWindowSize(getSize());
+      }
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    console.log(windowSize);
+    return windowSize;
+  }
+
+  const [Xposition, setXposition] = useState(0);
+  const slideRef = useRef(null);
+
+  const onClickLeft = e => {
+    if (Xposition > 0) {
+      console.log('left');
+      setXposition(Xposition - size.width);
+      slideRef.current.style.transition = "2s";
+      slideRef.current.style.transform = `translateX(-${Xposition}px)`;
+    }
+  };
+
+  const onClickRight = e => {
+    //console.log(slideRef);
+    if (Xposition < slideRef.current.offsetWidth) {
+      console.log('right');
+      async function setPosition() {
+        const a = await setXposition(Xposition + size.width);
+        slideRef.current.style.transition = "2s";
+        slideRef.current.style.transform = `translateX(-${Xposition}px)`;
+      };
+      setPosition();
+      // 이게 setXpositino() 실행한 다음에 
+      // slideRef~ 코드 부분이 실행이 되야 되는데 그게 안돼....
+      // 이 부분 어떻게 고쳐야 할지 모르겠어.....
+      //console.log(slideRef.current.offsetLeft);
+    }
+  };
+
+
+
   return (
     <>
       <Wrap>
@@ -99,52 +182,16 @@ const CardList = ({ history }) => {
           </SideText>
         </HeadWrap>
         <CardWrap>
-          <Swiper
-            spaceBetween={0}
-            slidesPerview={1}
-            loop={true}
-            style={{ width: '100vw', height: '40vw' }}
-          >
-            <SwiperSlide
-              style={{
-                width: '100vw',
-                padding: '0 3vw',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                alignItems: 'center',
-              }}
-            >
-              <Card className="invisible" />
-              <Card />
-              <Card />
-            </SwiperSlide>
-            <SwiperSlide
-              style={{
-                width: '100vw',
-                padding: '0 3vw',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                alignItems: 'center',
-              }}
-            >
-              <Card />
-              <Card />
-            </SwiperSlide>
-            <SwiperSlide
-              style={{
-                width: '100vw',
-                padding: '0 3vw',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'space-around',
-                alignItems: 'center',
-              }}
-            >
-              <Card />
-            </SwiperSlide>
-          </Swiper>
+          <Cards ref={slideRef} getWidth={size.width} number={8}>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+            <Card />
+          </Cards>
         </CardWrap>
         <BtnWrap>
           <Btn onClick={onClickLeft}>&larr;</Btn>

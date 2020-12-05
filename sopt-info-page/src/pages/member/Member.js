@@ -4,7 +4,7 @@ import style from 'styled-components';
 import Card from '../../components/card/Card';
 
 const CardListWrap = style.div`
-  width: 100%;
+  width: 100vw;
   padding: 5vw 0;
 
   @media only screen and (max-width: 1024px){
@@ -19,7 +19,7 @@ const CardListWrap = style.div`
 
 
 const CardList = style.div`
-  width: 100%;
+  width: 100vw;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
