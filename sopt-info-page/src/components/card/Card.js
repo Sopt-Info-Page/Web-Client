@@ -1,4 +1,4 @@
-import style from 'styled-components';
+import style, { createGlobalStyle, keyframes, css } from 'styled-components';
 import React, { useState } from 'react';
 import ic_email from '../../assets/cardImg/ic_email.png';
 import ic_phone from '../../assets/cardImg/ic_phone.png';
@@ -72,13 +72,30 @@ const CardImgHover = style.div`
     }
 `;
 
+const popUp = keyframes`
+  0% {
+    transform: scale(0);
+    opacity:0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity:1;
+  }
+`;
+
 const CardImgBubble = style.div`
+    opacity:0;
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 1vw;
     margin-left: 1.2vw;
-    
+    transform-origin: 0 50%;
+    animation: ${popUp} 0.3s ease-in;
+    animation-delay: ${props => (props.isFirst ? '0s' : '0.4s')};
+    animation-fill-mode: forwards;
+
     @media only screen and (max-width: 1024px){
       margin-bottom: 1.4vw;
       margin-left: 1.68vw;
@@ -352,14 +369,14 @@ const Card = ({ memberData }) => {
       <CardWrap>
         <CardImg onMouseOver={onHandleMouseOver} />
         <CardImgHover onMouseLeave={onHandleMouseLeave} isHover={isHover}>
-          <CardImgBubble>
+          <CardImgBubble isFirst={true}>
             <CardSmallImg
               link="https://i.pinimg.com/originals/a5/17/e3/a517e38cc2aa4003a639acd54680d516.jpg"
               onError="this.style.diaplay='none"
             />
             <CardSpeechBubble>Hi, I'm {str1}!</CardSpeechBubble>
           </CardImgBubble>
-          <CardImgBubble>
+          <CardImgBubble isFirst={false}>
             <CardSmallImg
               link="https://i.pinimg.com/originals/a5/17/e3/a517e38cc2aa4003a639acd54680d516.jpg"
               onError="this.style.diaplay='none"
