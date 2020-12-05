@@ -61,12 +61,14 @@ const CardImgHover = style.div`
       width: 42vw;
       height: 42vw;
       padding-top: 3.5vw;
+      border-radius: 3.08vw;
     }
   
     @media only screen and (max-width: 768px){
       width: 60vw;
       height: 60vw;
       padding-top: 5vw;
+      border-radius: 4.4vw;
     }
 `;
 
@@ -276,6 +278,7 @@ const CardContentWrap = style.div`
 const CardContent = style.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
     margin-top: 0.8vw;
 
     @media only screen and (max-width: 1024px){
@@ -291,29 +294,31 @@ const CardContentIcon = style.img`
     width: 1.3vw;
     height: 1.3vw;
     margin-right: 0.6vw;
-    margin-top: 0.3vw;
+    margin-top: 0.15vw;
 
     @media only screen and (max-width: 1024px){
       width: 1.82vw;
       height: 1.82vw;
       margin-right: 0.84vw;
-      margin-top: 0.42vw;
+      margin-top: 0.21vw;
     }
   
     @media only screen and (max-width: 768px){
       width: 2.6vw;
       height: 2.6vw;
       margin-right: 1.2vw;
-      margin-top: 0.6vw;
+      margin-top: 0.3vw;
     }
 `;
 
 const CardContentText = style.div`
     font-size: 0.9vw;
     font-weight: 500;
+    height: 0.9vw;
 
     @media only screen and (max-width: 1024px){
       font-size: 10px;
+      height: 10px;
     }
   
     @media only screen and (max-width: 768px){
