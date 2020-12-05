@@ -19,7 +19,7 @@ import blackdown from '../../assets/navImg/blackdown.png';
 import eyes from '../../assets/navImg/eyes.png';
 
 const NavWrap = styled.div`
-  width: 100%;
+  width: 100vw;
   background-color: #8dff65;
 `;
 
@@ -51,7 +51,7 @@ const AboutBox = styled.div`
 `;
 
 const JoinPart = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,7 +60,7 @@ const JoinPart = styled.div`
 
 const JoinBox = styled.div`
   padding: 50px;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,7 +68,7 @@ const JoinBox = styled.div`
 `;
 
 const JoinPartDescBox = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;

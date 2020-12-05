@@ -107,7 +107,7 @@ const CardImgBubble = style.div`
     }
 `;
 
-const CardSmallImg = style.img`
+const CardSmallImg = style.div`
     width: 3.5vw;
     height: 3.5vw;
     border-radius: 50%;
@@ -372,14 +372,12 @@ const Card = ({ memberData }) => {
           <CardImgBubble isFirst={true}>
             <CardSmallImg
               link="https://i.pinimg.com/originals/a5/17/e3/a517e38cc2aa4003a639acd54680d516.jpg"
-              onError="this.style.diaplay='none"
             />
             <CardSpeechBubble>Hi, I'm {str1}!</CardSpeechBubble>
           </CardImgBubble>
           <CardImgBubble isFirst={false}>
             <CardSmallImg
               link="https://i.pinimg.com/originals/a5/17/e3/a517e38cc2aa4003a639acd54680d516.jpg"
-              onError="this.style.diaplay='none"
             />
             <CardSpeechBubble>{str2}</CardSpeechBubble>
           </CardImgBubble>

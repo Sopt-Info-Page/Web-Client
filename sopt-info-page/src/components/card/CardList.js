@@ -72,6 +72,9 @@ const Cards = style.div`
       : props.getWidth * 0.35 + 'px'
   };
    
+    transition: 2s;
+    transform: translateX(-${props => props.getWidth * (props.clickNumber) + 'px'});
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -109,6 +112,8 @@ const Btn = style.button`
 
 const CardList = ({ history }) => {
   const size = useWindowSize();
+  const slideRef = useRef(null);
+  const [clickNumber, setClickNumber] = useState(0)
 
   function useWindowSize() {
     const isClient = typeof window === 'object';
@@ -129,41 +134,27 @@ const CardList = ({ history }) => {
 
       function handleResize() {
         setWindowSize(getSize());
+        setClickNumber(0);
       }
+
 
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
     }, []);
-    console.log(windowSize);
     return windowSize;
   }
 
-  const [Xposition, setXposition] = useState(0);
-  const slideRef = useRef(null);
 
   const onClickLeft = e => {
-    if (Xposition > 0) {
-      console.log('left');
-      setXposition(Xposition - size.width);
-      slideRef.current.style.transition = "2s";
-      slideRef.current.style.transform = `translateX(-${Xposition}px)`;
+    if (clickNumber > 0) {
+      setClickNumber(clickNumber - 1);
     }
   };
 
   const onClickRight = e => {
-    //console.log(slideRef);
-    if (Xposition < slideRef.current.offsetWidth) {
+    if ((clickNumber + 1) * size.width < slideRef.current.offsetWidth) {
+      setClickNumber(clickNumber + 1);
       console.log('right');
-      async function setPosition() {
-        const a = await setXposition(Xposition + size.width);
-        slideRef.current.style.transition = "2s";
-        slideRef.current.style.transform = `translateX(-${Xposition}px)`;
-      };
-      setPosition();
-      // 이게 setXpositino() 실행한 다음에 
-      // slideRef~ 코드 부분이 실행이 되야 되는데 그게 안돼....
-      // 이 부분 어떻게 고쳐야 할지 모르겠어.....
-      //console.log(slideRef.current.offsetLeft);
     }
   };
 
@@ -182,7 +173,7 @@ const CardList = ({ history }) => {
           </SideText>
         </HeadWrap>
         <CardWrap>
-          <Cards ref={slideRef} getWidth={size.width} number={8}>
+          <Cards ref={slideRef} getWidth={size.width} number={8} clickNumber={clickNumber}>
             <Card />
             <Card />
             <Card />
