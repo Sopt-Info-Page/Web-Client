@@ -2,13 +2,14 @@ import './Member.scss';
 import TitleHeader from '../../components/titleheader/TitleHeader';
 import style from 'styled-components';
 import Card from '../../components/card/Card';
+import RoundPillBtn from '../../components/buttons/RoundPillBtn';
 
 const CardListWrap = style.div`
   width: 100vw;
   padding: 5vw 0;
 
   @media only screen and (max-width: 1024px){
-    padding: 3vw 0;
+    padding: 5vw 0;
   }
 
   @media only screen and (max-width: 768px){
@@ -16,7 +17,6 @@ const CardListWrap = style.div`
   }
 
 `;
-
 
 const CardList = style.div`
   width: 100vw;
@@ -36,8 +36,6 @@ const CardList = style.div`
 
 `;
 
-
-
 function Member({ match }) {
   // match : { params, url, path ... }
   // match.path : '/member'
@@ -56,6 +54,15 @@ function Member({ match }) {
           <Card />
         </CardList>
       </CardListWrap>
+      <div
+        style={{
+          position: 'relative',
+          left: 'calc(50% - 20vw)',
+          bottom: '-100px',
+        }}
+      >
+        <RoundPillBtn className="roundPill" text={'join on sopt!'} />
+      </div>
     </section>
   );
 }
