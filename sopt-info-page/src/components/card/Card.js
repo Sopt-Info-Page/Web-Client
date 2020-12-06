@@ -30,7 +30,7 @@ const CardWrap = style.div`
 const CardImg = style.img`
     width: 30vw;
     height: 27.5vw;
-    background-image: url("https://i.pinimg.com/originals/a5/17/e3/a517e38cc2aa4003a639acd54680d516.jpg");
+    background-image: ${props => 'url(' + props.link});
     background-repeat:no-repeat;
     background-size: auto 100%;
     background-position: center center;
@@ -343,15 +343,14 @@ const CardContentText = style.div`
     }
 `;
 
-const str1 = 'Manzu';
-const str2 = 'If you want to contact me, plz send a email below. Thank you!';
-const str3 = '#mbti';
-const str4 = 'Grapthic Designer';
-const str5 = 'SiCei Kim';
-const str6 = 'hyunjin@gmail.com';
-const str7 = '+821087245697';
 
-const Card = ({ memberData }) => {
+
+const Card = ({ userData }) => {
+  const str3 = `#${userData.mbti}`;
+  const str4 = userData.job;
+  const str5 = userData.name;
+  const str6 = userData.email;
+  const str7 = `+${userData.phoneNumber}`;
   const [isHover, setIsHover] = useState(false);
 
   const onHandleMouseOver = () => {
@@ -367,19 +366,19 @@ const Card = ({ memberData }) => {
   return (
     <>
       <CardWrap>
-        <CardImg onMouseOver={onHandleMouseOver} />
+        <CardImg link={userData.image} onMouseOver={onHandleMouseOver} />
         <CardImgHover onMouseLeave={onHandleMouseLeave} isHover={isHover}>
           <CardImgBubble isFirst={true}>
             <CardSmallImg
-              link="https://i.pinimg.com/originals/a5/17/e3/a517e38cc2aa4003a639acd54680d516.jpg"
+              link={userData.image}
             />
-            <CardSpeechBubble>Hi, I'm {str1}!</CardSpeechBubble>
+            <CardSpeechBubble>Hi, I'm {str5}!</CardSpeechBubble>
           </CardImgBubble>
           <CardImgBubble isFirst={false}>
             <CardSmallImg
-              link="https://i.pinimg.com/originals/a5/17/e3/a517e38cc2aa4003a639acd54680d516.jpg"
+              link={userData.image}
             />
-            <CardSpeechBubble>{str2}</CardSpeechBubble>
+            <CardSpeechBubble>If you want to contact me, plz send a email below. Thank you!</CardSpeechBubble>
           </CardImgBubble>
         </CardImgHover>
         <CardContents>

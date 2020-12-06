@@ -3,6 +3,8 @@ import TitleHeader from '../../components/titleheader/TitleHeader';
 import style from 'styled-components';
 import Card from '../../components/card/Card';
 import RoundPillBtn from '../../components/buttons/RoundPillBtn';
+import { React, useState, useEffect } from 'react';
+import getUsers from '../../lib/api/userAPI';
 
 const CardListWrap = style.div`
   width: 100vw;
@@ -39,19 +41,32 @@ const CardList = style.div`
 function Member({ match }) {
   // match : { params, url, path ... }
   // match.path : '/member'
+  const [users, setUsers] = useState({
+    users: null,
+    status: 'idle',
+  });
+
+  useEffect(() => {
+    (async () => {
+      setUsers({users: null, status: 'pending'});
+      try {
+        const result = await getUsers();
+        setUsers({users: result, status: 'resolved'});
+      } catch(e) {
+        setUsers({users: null, status: 'rejected'});
+      }
+    })();
+  },[]);
   return (
     <section>
       <TitleHeader member />
       {/* <div id="MemberList" style={{ height: '200px' }}></div> */}
       <CardListWrap>
         <CardList>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {users.status === 'resolved'? users.users && users.users.map((user,i) => {
+              return <Card key={"card-" + i} userData={user}/>
+            }) : <></>
+          }
         </CardList>
       </CardListWrap>
       <div

@@ -6,6 +6,7 @@ import Card from './Card';
 // import 'swiper/components/pagination/pagination.scss';
 // import 'swiper/components/navigation/navigation.scss';
 import { React, useState, useEffect, useRef } from 'react';
+import getUsers from '../../lib/api/userAPI';
 
 
 const Wrap = style.div`
@@ -111,10 +112,27 @@ const Btn = style.button`
 `;
 
 const CardList = ({ history }) => {
+
   const size = useWindowSize();
   const slideRef = useRef(null);
-  const [clickNumber, setClickNumber] = useState(0)
+  const [clickNumber, setClickNumber] = useState(0);
+  const [users, setUsers] = useState({
+    users: null,
+    status: 'idle',
+  });
 
+  useEffect(() => {
+    (async () => {
+      setUsers({users: null, status: 'pending'});
+      try {
+        const result = await getUsers();
+        setUsers({users: result, status: 'resolved'});
+      } catch(e) {
+        setUsers({users: null, status: 'rejected'});
+      }
+    })();
+  },[]);
+    
   function useWindowSize() {
     const isClient = typeof window === 'object';
 
@@ -136,10 +154,9 @@ const CardList = ({ history }) => {
         setWindowSize(getSize());
         setClickNumber(0);
       }
-
-
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
+    
     }, []);
     return windowSize;
   }
@@ -157,9 +174,7 @@ const CardList = ({ history }) => {
       console.log('right');
     }
   };
-
-
-
+  
   return (
     <>
       <Wrap>
@@ -174,14 +189,10 @@ const CardList = ({ history }) => {
         </HeadWrap>
         <CardWrap>
           <Cards ref={slideRef} getWidth={size.width} number={8} clickNumber={clickNumber}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+          {users.status === 'resolved'? users.users && users.users.map((user,i) => {
+              return <Card key={"card-" + i} userData={user}/>
+            }) : <></>
+          }
           </Cards>
         </CardWrap>
         <BtnWrap>
