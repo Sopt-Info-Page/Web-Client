@@ -48,6 +48,10 @@ const AboutBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const JoinPart = styled.div`
@@ -127,6 +131,9 @@ const MoreBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  a {
+    text-decoration: none;
+  }
 `;
 
 const DownArrowBlack = styled.img.attrs(props => ({
@@ -200,18 +207,20 @@ const Main = props => {
         <FlowBanner firstflow />
         <JoinPart>
           <JoinBox>
-            <AboutBox>
-              <OvalBtn
-                className="aboutOval"
-                border_color={'#FFFFFF'}
-                border_width={1}
-                background={'#8DFF65'}
-                color={'#FFFFFF'}
-                height={50}
-                width={120}
-                font_size={15}
-                text={'about'}
-              ></OvalBtn>
+            <AboutBox id="about">
+              <a href="#about">
+                <OvalBtn
+                  className="aboutOval"
+                  border_color={'#FFFFFF'}
+                  border_width={1}
+                  background={'#8DFF65'}
+                  color={'#FFFFFF'}
+                  height={50}
+                  width={120}
+                  font_size={15}
+                  text={'about'}
+                ></OvalBtn>
+              </a>
               <DownArrow />
             </AboutBox>
             <JoinPartDescBox>
@@ -238,19 +247,21 @@ const Main = props => {
           <Route component={CardList} />
         </WeArePart>
         <FlowBanner secondflow />
-        <MorePart>
+        <MorePart id="more">
           <MoreBox>
-            <OvalBtn
-              className="moreOval"
-              border_color={'#000'}
-              border_width={1}
-              background={'#FFFFFF'}
-              color={'#000'}
-              height={50}
-              width={120}
-              font_size={15}
-              text={'more'}
-            ></OvalBtn>
+            <a href="#more">
+              <OvalBtn
+                className="moreOval"
+                border_color={'#000'}
+                border_width={1}
+                background={'#FFFFFF'}
+                color={'#000'}
+                height={50}
+                width={120}
+                font_size={15}
+                text={'more'}
+              ></OvalBtn>
+            </a>
             <DownArrowBlack />
           </MoreBox>
           <MoreContentWrapper>
