@@ -343,8 +343,6 @@ const CardContentText = style.div`
     }
 `;
 
-
-
 const Card = ({ userData }) => {
   const str3 = `#${userData.mbti}`;
   const str4 = userData.job;
@@ -365,20 +363,18 @@ const Card = ({ userData }) => {
 
   return (
     <>
-      <CardWrap>
+      <CardWrap className="mr-4">
         <CardImg link={userData.image} onMouseOver={onHandleMouseOver} />
         <CardImgHover onMouseLeave={onHandleMouseLeave} isHover={isHover}>
           <CardImgBubble isFirst={true}>
-            <CardSmallImg
-              link={userData.image}
-            />
+            <CardSmallImg link={userData.image} />
             <CardSpeechBubble>Hi, I'm {str5}!</CardSpeechBubble>
           </CardImgBubble>
           <CardImgBubble isFirst={false}>
-            <CardSmallImg
-              link={userData.image}
-            />
-            <CardSpeechBubble>If you want to contact me, plz send a email below. Thank you!</CardSpeechBubble>
+            <CardSmallImg link={userData.image} />
+            <CardSpeechBubble>
+              If you want to contact me, plz send a email below. Thank you!
+            </CardSpeechBubble>
           </CardImgBubble>
         </CardImgHover>
         <CardContents>

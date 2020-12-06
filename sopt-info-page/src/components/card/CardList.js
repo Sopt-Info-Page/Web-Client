@@ -8,7 +8,6 @@ import Card from './Card';
 import { React, useState, useEffect, useRef } from 'react';
 import getUsers from '../../lib/api/userAPI';
 
-
 const Wrap = style.div`
     width: 100vw;
     display: flex;
@@ -19,6 +18,7 @@ const HeadWrap = style.div`
     width: 100vw;
     height: 10vw;
     margin-top: 15vw;
+    margin-bottom:2rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -47,6 +47,8 @@ const CardWrap = style.div`
     height: 45vw;
     overflow: hidden;
     margin: 0;
+    display: flex;
+    align-items: center;
 
     @media only screen and (max-width: 1024px){
       height: 59vw;
@@ -59,22 +61,21 @@ const CardWrap = style.div`
 
 const Cards = style.div`
     width: ${props =>
-    props.getWidth < 1024 ? (
-      props.getWidth < 768 ?
-        props.getWidth * 0.65 * props.number + 'px'
-        : props.getWidth * 0.46 * props.number + 'px')
-      : props.getWidth * 0.33 * props.number + 'px'
-  };
+      props.getWidth < 1024
+        ? props.getWidth < 768
+          ? props.getWidth * 0.65 * props.number + 'px'
+          : props.getWidth * 0.46 * props.number + 'px'
+        : props.getWidth * 0.33 * props.number + 'px'};
     height: ${props =>
-    props.getWidth < 1024 ? (
-      props.getWidth < 768 ?
-        props.getWidth * 0.7 + 'px'
-        : props.getWidth * 0.49 + 'px')
-      : props.getWidth * 0.35 + 'px'
-  };
+      props.getWidth < 1024
+        ? props.getWidth < 768
+          ? props.getWidth * 0.7 + 'px'
+          : props.getWidth * 0.49 + 'px'
+        : props.getWidth * 0.35 + 'px'};
    
     transition: 2s;
-    transform: translateX(-${props => props.getWidth * (props.clickNumber) + 'px'});
+    transform: translateX(-${props =>
+      props.getWidth * props.clickNumber + 'px'});
 
     display: flex;
     flex-direction: row;
@@ -90,7 +91,7 @@ const BtnWrap = style.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10vw;
+    margin-bottom: 2rem;
 `;
 
 const Btn = style.button`
@@ -112,7 +113,6 @@ const Btn = style.button`
 `;
 
 const CardList = ({ history }) => {
-
   const size = useWindowSize();
   const slideRef = useRef(null);
   const [clickNumber, setClickNumber] = useState(0);
@@ -123,23 +123,23 @@ const CardList = ({ history }) => {
 
   useEffect(() => {
     (async () => {
-      setUsers({users: null, status: 'pending'});
+      setUsers({ users: null, status: 'pending' });
       try {
         const result = await getUsers();
-        setUsers({users: result, status: 'resolved'});
-      } catch(e) {
-        setUsers({users: null, status: 'rejected'});
+        setUsers({ users: result, status: 'resolved' });
+      } catch (e) {
+        setUsers({ users: null, status: 'rejected' });
       }
     })();
-  },[]);
-    
+  }, []);
+
   function useWindowSize() {
     const isClient = typeof window === 'object';
 
     function getSize() {
       return {
         width: isClient ? window.innerWidth : undefined,
-        height: isClient ? window.innerHeight : undefined
+        height: isClient ? window.innerHeight : undefined,
       };
     }
 
@@ -156,11 +156,9 @@ const CardList = ({ history }) => {
       }
       window.addEventListener('resize', handleResize);
       return () => window.removeEventListener('resize', handleResize);
-    
     }, []);
     return windowSize;
   }
-
 
   const onClickLeft = e => {
     if (clickNumber > 0) {
@@ -174,7 +172,7 @@ const CardList = ({ history }) => {
       console.log('right');
     }
   };
-  
+
   return (
     <>
       <Wrap>
@@ -182,17 +180,26 @@ const CardList = ({ history }) => {
           <HeadText>We are,</HeadText>
           <SideText
             className="c-pointer"
-            onClick={() => history.push('/member#MemberList')}
+            onClick={() => history.push('/member/#MemberList')}
           >
             See ALL
           </SideText>
         </HeadWrap>
         <CardWrap>
-          <Cards ref={slideRef} getWidth={size.width} number={8} clickNumber={clickNumber}>
-          {users.status === 'resolved'? users.users && users.users.map((user,i) => {
-              return <Card key={"card-" + i} userData={user}/>
-            }) : <></>
-          }
+          <Cards
+            ref={slideRef}
+            getWidth={size.width}
+            number={8}
+            clickNumber={clickNumber}
+          >
+            {users.status === 'resolved' ? (
+              users.users &&
+              users.users.map((user, i) => {
+                return <Card key={'card-' + i} userData={user} />;
+              })
+            ) : (
+              <></>
+            )}
           </Cards>
         </CardWrap>
         <BtnWrap>
